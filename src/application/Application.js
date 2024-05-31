@@ -94,8 +94,6 @@ class NodeactylApplication {
                     await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
                         if(page.data.data.find(d => d.attributes.email === email) !== undefined) {
                             user = page.data.data.find(d => d.attributes.email === email)
-                        } else {
-                            user = false;
                         }
                     }).catch(err => rej(this.processError(err)));
                 }
